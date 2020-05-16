@@ -3,6 +3,11 @@ class TweetsController < ApplicationController
     @tweets = Tweet.all
   end
 
+  def all
+    @tweets = Tweet.all
+    @user = params[:id]
+  end
+
   def show
     @tweet = Tweet.find(params[:id])
   end

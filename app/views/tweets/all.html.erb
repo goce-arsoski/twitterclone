@@ -1,0 +1,16 @@
+<h1>Tweets</h1>
+
+<%= link_to 'Back', tweets_path %>
+
+<div>
+  <ul>
+  <%= @user %>
+    <% @tweets.each do |tweet| %>
+      <% if tweet.user == @user %>
+        <li>
+          <%= tweet.content %>
+        </li>
+      <% end %>
+    <% end %>
+  </ul>
+</div>
