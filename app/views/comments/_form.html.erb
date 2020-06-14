@@ -1,0 +1,36 @@
+<div class="container">
+  <div class="miltiline">
+    <div class="column is-6 is-offset-3">
+      <div class="content is-size-3">
+        <h1><%= title %></h1>
+      </div>
+    </div>
+    <div class="column is-4 is-offset-4">
+      <article class="media">
+        <div class="media-content">
+          <%= form_with model: [tweet, comment], local: true do |form| %>
+            <div class="control">
+                <p>
+                  <%= form.label :commenter, class: 'label is-large' %>
+                  <%= form.text_field :commenter, class: 'input is-rounded', placeholder: 'Your name' %>
+                </p>
+                <br>
+              <div class="control">
+                  <p>
+                    <%= form.label :body, class: 'label is-large' %>
+                    <%= form.text_area :body, class: 'textarea is-large', placeholder: 'Your comment' %><br>
+                  </p>
+                <div class="control">
+                  <p>
+                    <%= form.submit submit, class: 'button is-success' %>
+                  </p>
+                </div>
+              </div>
+            </div>
+            <br>
+          <% end %>
+        </div>
+      </article>
+    </div>
+  </div>
+</div>

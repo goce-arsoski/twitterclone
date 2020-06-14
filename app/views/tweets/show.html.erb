@@ -1,6 +1,14 @@
-<h1>View Tweet</h1>
+<div class="container">
+  <div class="columns is-multiline">
+    <div class="column is-6 is-offset-3">
+      <div class="content is-size-3">
+        <h1> View Tweet </h1>
+      </div>
+    
+      <%= render @tweet, show: true %>
 
-<h3><%= link_to 'Home', tweets_path %></h3>
+      <%= render @comments %>
 
-<h2><%= @tweet.user %></h2>
-<p><%= @tweet.content %></p>
+    </div>
+  </div>
+</div>

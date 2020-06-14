@@ -1,0 +1,28 @@
+<nav class="navbar" role="navigation" aria-label="main navigation">
+      <div class="navbar-brand">
+        <a class="navbar-item" href="https://twitter.com/">
+          <img src="https://logos-marcas.com/wp-content/uploads/2020/04/Twitter-Logo-650x366.png" width="50" height="28">
+        </a>
+
+        <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+      </div>
+
+      <div id="navbarBasicExample" class="navbar-menu">
+        <div class="navbar-start">
+          <%= link_to 'TwitterClone', root_path, class: 'title' %>
+        </div>
+
+        <div class="navbar-end">
+          <div class="navbar-item">
+            <div class="buttons">
+              <%= link_to 'New Tweet', new_tweet_path, class: 'button is-info has-text-weight-bold' %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+    
