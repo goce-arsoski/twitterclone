@@ -1,7 +1,9 @@
-<div class="card">
+<div class="card block">
   <header class="card-header">
     <p class="card-header-title has-background-grey-light">
-      <%= tweet.user %>
+      <% if local_assigns[:index_user] %>
+          <%= tweet.user %>
+      <% end %>
     </p>
   </header>
   <div class="card-content">
@@ -19,14 +21,14 @@
     </div>
   </nav>
   <footer class="card-footer">
-    <% if local_assigns[:show] %>
+    <% unless local_assigns[:index_user] %>
       <%= link_to 'Back', root_path, class: 'card-footer-item button is-info' %>
     <% else %>
       <%= link_to 'View', tweet_path(tweet), class: 'card-footer-item button is-info' %>
     <% end %>
 
-    <% if local_assigns[:show] %>
-      <%= link_to 'New Comment', new_tweet_comment_path(tweet), class: 'card-footer-item button is-light' %>
+    <% unless local_assigns[:index_user] %>
+      <%= link_to 'New Comment', new_tweet_comment_path(tweet), class: 'card-footer-item button is-success' %>
     <% else %>
       <%= link_to 'User Tweets', tweets_all_path(tweet.user), class: 'card-footer-item button is-success' %>
     <% end %>

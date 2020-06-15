@@ -1,11 +1,11 @@
 <div class="container">
   <div class="columns is-multiline">
     <div class="column is-6 is-offset-3">
-      <div class="content is-size-3">
-        <h1> View Tweet </h1>
+      <div class="content is-size-4">
+        <h1 class="title has-text-centered"> <%= @tweet.user %>'s Tweet </h1>
       </div>
     
-      <%= render @tweet, show: true %>
+      <%= render @tweet %>
 
       <%= render @comments %>
 

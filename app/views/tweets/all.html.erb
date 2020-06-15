@@ -1,38 +1,17 @@
-<h1 class="title has-text-centered"><%= @user %>'s Tweets </h1>
-
 <div class="container">
   <div class="miltiline">
     <div class="column is-6 is-offset-3">
-      <% @tweets.each do |tweet| %>
-        <% if tweet.user == @user %>
-        <div class="card">
-          <header class="card-header">
-            <p class="card-header-title has-background-grey-light">
-            </p>
-          </header>
-          <div class="card-content">
-            <div class="content">
-              <p>
-                <%= tweet.content %>
-              </p>           
-            </div>
-          </div>
-          <nav class="level-right">
-            <div class="level">
-              <span class="is-size-6 is-italic">
-                <%= tweet.updated_at.localtime.strftime("%B %d, %Y - %H:%M") %>
-              </span>
-            </div>
-          </nav>
-          <footer class="card-footer">
-            <%= link_to 'View', tweet_path(tweet), class: 'card-footer-item button is-info' %>
-            <%= link_to 'Edit', edit_tweet_path(tweet), class: 'card-footer-item button is-link' %>
-            <%= link_to 'Delete', tweet_path(tweet), class: 'card-footer-item button is-danger',
-              method: :delete, data: { confirm: 'Are you sure you want to delete this tweet?' } %>
-          </footer>
-        </div><br>
+      <div class="content is-size-4">
+        <h1 class="title has-text-centered"><%= @user %>'s Tweets </h1>
+        
+        <% @tweets.each do |tweet| %>
+          <% if tweet.user == @user %>
+
+            <%= render tweet %>
+
+          <% end %>
         <% end %>
-      <% end %>
+      </div>
     </div>
   </div>
 </div>
