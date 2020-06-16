@@ -1,10 +1,10 @@
 <div class="card block">
   <header class="card-header">
-    <p class="card-header-title has-background-grey-light">
-      <% if local_assigns[:index_user] %>
-          <%= tweet.user %>
-      <% end %>
-    </p>
+    <% if local_assigns[:index_user] %>
+      <p class="card-header-title has-background-grey-light">
+        <%= tweet.user %>
+      </p>
+    <% end %>
   </header>
   <div class="card-content">
     <div class="content">
