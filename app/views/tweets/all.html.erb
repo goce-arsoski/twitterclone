@@ -1,8 +1,9 @@
 <div class="container">
-  <div class="miltiline">
+  <div class="columns is-multiline">
     <div class="column is-6 is-offset-3">
       <div class="content is-size-4">
-        <h1 class="title has-text-centered"><%= @user %>'s Tweets </h1>
+        <h1 class="title has-text-centered"> <%= @user %>'s Tweets </h1>
+      </div>
         
         <% @tweets.each do |tweet| %>
           <% if tweet.user == @user %>
@@ -11,7 +12,6 @@
 
           <% end %>
         <% end %>
-      </div>
     </div>
   </div>
 </div>
