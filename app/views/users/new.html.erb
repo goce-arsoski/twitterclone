@@ -26,14 +26,16 @@
             <%= form.label :name, class: 'label is-large' %>
             <%= form.text_field :name, class: 'input is-medium', placeholder: 'Your name' %>
           </p>
-          <br>
         </div>
+        <br>
+
         <div class="control">
           <p>
             <%= form.label :email, class: 'label is-large' %>
             <%= form.text_field :email, class: 'input is-medium', placeholder: 'Your email' %><br>
           </p>
         </div>
+        <br>
 
         <div class="control">
           <p>
@@ -41,6 +43,7 @@
             <%= form.text_field :password, class: 'input is-medium', placeholder: 'Password' %><br>
           </p>
         </div>
+        <br>
 
         <div class="control">
           <p>
@@ -48,11 +51,12 @@
             <%= form.text_field :password_confirmation, class: 'input is-medium', placeholder: 'Confirm Password' %><br>
           </p>
         </div>          
+        <br>
 
         <div class="control">
           <p>
             <%= form.submit 'Create User', class: 'button is-success' %>
-            <%= link_to 'Cancel', @user, class: 'button is-danger' %>
+            <%= link_to 'Cancel', users_new_path, class: 'button is-danger' %>
           </p>
         </div>
         <br>
