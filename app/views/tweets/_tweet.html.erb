@@ -36,7 +36,8 @@
             <span class="icon is-small"><i class="fas fa-comment-medical"></i></span>
           <% end %>
         <% else %>
-          <%= link_to tweets_all_path(tweet.user), class: 'card-footer-item' do %>
+        <%# tweets_all_path(tweet.user) %>
+          <%= link_to tweets_path, class: 'card-footer-item' do %>
             <span class="icon is-small"><i class="fab fa-twitter"></i></span>
           <% end %>
         <% end %>
