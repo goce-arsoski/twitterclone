@@ -2,12 +2,12 @@
   <div class="columns is-multiline">
     <div class="column is-6 is-offset-3">
       <div class="content is-size-4">
-        <h1 class="title has-text-centered"> <%= @tweet.user %>'s Tweet </h1>
+        <h1 class="title has-text-centered"> <%= @tweet.user.name %>'s Tweet </h1>
       </div>
     
       <%= render @tweet %>
 
-      <%= render @comments %>
+      <%= render @tweet.comments %>
 
     </div>
   </div>

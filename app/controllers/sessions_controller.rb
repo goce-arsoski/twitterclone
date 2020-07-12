@@ -1,5 +1,6 @@
 class SessionsController < ApplicationController
   def new
+    session_notice(:warning, 'Already logged in!') if logged_in?
   end
 
   def create
@@ -15,5 +16,7 @@ class SessionsController < ApplicationController
   end
 
   def destroy
+    log_out
+    redirect_to root_path
   end
 end

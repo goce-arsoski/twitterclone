@@ -23,16 +23,9 @@
       <%= form_with model: tweet, local: true do |form| %>
         <div class="control">
           <p>
-            <%= form.label :user, class: 'label is-large' %>
-            <%= form.text_field :user, class: 'input is-rounded', placeholder: 'Your name' %>
+            <%= form.label :content, class: 'label is-large' %>
+            <%= form.text_area :content, class: 'textarea is-large', placeholder: 'Your content' %><br>
           </p>
-        </div>
-        <br>
-          <div class="control">
-            <p>
-              <%= form.label :content, class: 'label is-large' %>
-              <%= form.text_area :content, class: 'textarea is-large', placeholder: 'Your content' %><br>
-            </p>
         </div>          
         <div class="control">
           <p>

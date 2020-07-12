@@ -1,5 +1,5 @@
 <%= render 'form',
 tweet: @tweet,
 comment: @comment,
-title: "#{@tweet.user} - New Comment",
+title: "#{current_user.name} - New Comment",
 submit: 'Comment' %>
