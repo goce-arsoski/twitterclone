@@ -21,45 +21,46 @@
 
     <div class="column is-4 is-offset-4">
       <%= form_with model: @user, local: true do |form| %>
-        <div class="control">
-          <p>
-            <%= form.label :name, class: 'label is-large' %>
-            <%= form.text_field :name, class: 'input is-medium', placeholder: 'Your name' %>
+        <div class="field">
+          <%= form.label :name, class: 'label' %>
+          <div class="control">
+            <%= form.text_field :name, class: 'input', placeholder: 'Your name' %>
+          </div>
+        </div>
+
+        <div class="field">
+          <%= form.label :email, class: 'label' %>
+          <div class="control">
+            <%= form.text_field :email, class: 'input', placeholder: 'Your email' %>
+          </div>
+        </div>
+        
+        <div class="field">
+          <%= form.label :password, class: 'label' %>
+          <p class="control has-icons-left">
+            <%= form.text_field :password, class: 'input', type: 'password', placeholder: 'Password' %>            
+            <span class="icon is-small is-left">
+              <i class="fas fa-lock"></i>
+            </span>
           </p>
         </div>
-        <br>
 
-        <div class="control">
-          <p>
-            <%= form.label :email, class: 'label is-large' %>
-            <%= form.text_field :email, class: 'input is-medium', placeholder: 'Your email' %><br>
+        <div class="field">
+          <%= form.label :password_confirmation, class: 'label' %>
+          <p class="control has-icons-left">
+            <%= form.text_field :password_confirmation, class: 'input', type: 'password', placeholder: 'Confirm Password' %>
+            <span class="icon is-small is-left">
+              <i class="fas fa-lock"></i>
+            </span>
           </p>
         </div>
-        <br>
 
-        <div class="control">
-          <p>
-            <%= form.label :password, class: 'label is-large' %>
-            <%= form.text_field :password, class: 'input is-medium', placeholder: 'Password' %><br>
-          </p>
-        </div>
-        <br>
-
-        <div class="control">
-          <p>
-            <%= form.label :password_confirmation, class: 'label is-large' %>
-            <%= form.text_field :password_confirmation, class: 'input is-medium', placeholder: 'Confirm Password' %><br>
-          </p>
-        </div>          
-        <br>
-
-        <div class="control">
-          <p>
+        <div class="field">
+          <p class="control">
             <%= form.submit 'Create User', class: 'button is-success' %>
             <%= link_to 'Cancel', users_signup_path, class: 'button is-danger' %>
           </p>
         </div>
-        <br>
       <% end %>
     </div>
   </div>
