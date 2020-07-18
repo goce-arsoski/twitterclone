@@ -9,8 +9,28 @@ RSpec.describe User do
     end
   end
 
-  it { is_expected.to have_many(:tweets) }
-  it { is_expected.to have_many(:comments) }
+  describe 'associations' do
+    it { is_expected.to have_many(:tweets) }
+    it { is_expected.to have_many(:comments) }
+
+    describe 'dependent' do
+      let(:tweets_count) { 1 }
+      let(:comments_count) { 1 }
+      let(:user) { create(:user) }
+
+      it 'destroy tweets' do
+        create_list(:tweet, tweets_count, user: user)
+
+        expect { user.destroy }.to change { Tweet.count }.by(-tweets_count)
+      end
+
+      it 'destroy comments' do
+        create_list(:comment, comments_count, user: user)
+
+        expect { user.destroy }.to change { Comment.count }.by(-comments_count)
+      end
+    end
+  end
 
   describe 'validations' do
     it { is_expected.to validate_presence_of(:name) }
