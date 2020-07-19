@@ -18,7 +18,7 @@
         </ul>
       </div>
     <% end %>
-    
+
     <div class="column is-4 is-offset-4">
       <%= form_with model: tweet, local: true do |form| %>
         <div class="control">
@@ -26,7 +26,7 @@
             <%= form.label :content, class: 'label is-large' %>
             <%= form.text_area :content, class: 'textarea is-large', placeholder: 'Your content' %><br>
           </p>
-        </div>          
+        </div>
         <div class="control">
           <p>
             <%= form.submit submit, class: 'button is-success' %>
